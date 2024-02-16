@@ -14,7 +14,7 @@ const education = defineCollection({
   type: "content",
   schema: EducationSchema,
 });
-const recomendation = defineCollection({
+const recommendation = defineCollection({
   type: "content",
   schema: RecomendationSchema,
 });
@@ -23,5 +23,5 @@ const recomendation = defineCollection({
 export const collections = {
   experience,
   education,
-  recomendation,
+  recommendation,
 };
