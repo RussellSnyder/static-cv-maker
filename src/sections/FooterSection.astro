@@ -10,13 +10,15 @@ const honeypot = await getEntry("recommendation", "honeypot");
 const adidas = await getEntry("recommendation", "adidas");
 ---
 
-<div class="grid grid-cols-3 gap-6">
-  <div class="col-span-2">
+<div class="md:grid md:grid-cols-3 gap-6">
+  <div class="md:col-span-2">
     <SectionHeader title="Recommendations" />
     <RecommendationEntry recommendation={honeypot} />
     <RecommendationEntry recommendation={adidas} />
   </div>
-  <div class="col-span-1">
+  <div
+    class="md:col-span-1 w-full flex flex-col items-center md:items-start text-center md:text-left"
+  >
     <div class="mb-2">
       <SectionHeader title="References" small />
       <div>Available upon request</div>

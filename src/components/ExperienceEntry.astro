@@ -14,9 +14,9 @@ const { Content } = await experience.render();
 ---
 
 <div
-  class={`grid grid-cols-4 mb-4 gap-4 items-center${pageBreak ? " break-after-page" : ""}`}
+  class={`grid md:grid-cols-4 mb-4 gap-2 md:gap-4 items-center${pageBreak ? " break-after-page" : ""}`}
 >
-  <div class="col-span-3">
+  <div class="md:col-span-3">
     <h4 class="text-lg font-bold">
       {role}
     </h4>
@@ -29,9 +29,9 @@ const { Content } = await experience.render();
       <Content />
     </div>
   </div>
-  <div class="col-span-1">
+  <div class="md:col-span-1">
     <h4 class="font-semibold text-gray-700">Tech Stack</h4>
-    <div class="text-xs text-gray-500">
+    <div class="text-xs text-gray-500 w-full">
       {techstack}
     </div>
   </div>

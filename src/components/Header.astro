@@ -5,23 +5,27 @@ import Dot from "../components/Dot.astro";
 ---
 
 <header class="bg-sky-100">
-  <div class="p-4 grid grid-cols-5 gap-7 items-center">
-    <div class="col-span-1">
+  <div class="p-4 grid md:grid-cols-5 gap-7 md:items-center">
+    <div class="md:col-span-1">
       <Image
-        class="object-cover"
+        class="md:object-cover max-w-32 m-auto md:m-0"
         src={russellFace}
         alt="Russell looking like somebody you want to hire!"
       />
     </div>
-    <div class="col-span-4">
-      <h1 class="text-4xl uppercase">Russell Evan Snyder</h1>
-      <h2 class="text-3xl text-gray-600 uppcase">Senior Software Developer</h2>
-      <div class="text-center mt-3 text-gray-500 flex items-center">
-        <span>Erlangen, Germany</span>
-        <Dot size={6} className="mx-2" />
-        <span>+4917645766404</span>
-        <Dot size={6} className="mx-2" />
-        <span>russellevansnyder@gmail.com</span>
+    <div class="text-center md:text-left md:col-span-4">
+      <h1 class="text-2xl md:text-4xl uppercase">Russell Evan Snyder</h1>
+      <h2 class="text-xl md:text-3xl text-gray-600 uppcase">
+        Senior Software Developer
+      </h2>
+      <div
+        class="text-sm md:text-base text-center mt-3 text-gray-500 md:flex items-center"
+      >
+        <div>Erlangen, Germany</div>
+        <Dot size={6} className="mx-2 hidden md:block" />
+        <div>+4917645766404</div>
+        <Dot size={6} className="mx-2 hidden md:block" />
+        <div>russellevansnyder@gmail.com</div>
       </div>
     </div>
   </div>
