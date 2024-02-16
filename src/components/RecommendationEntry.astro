@@ -1,0 +1,32 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Dot from "./Dot.astro";
+interface Props {
+  recommendation: CollectionEntry<"recommmendation">;
+}
+
+const { recommendation } = Astro.props;
+const {
+  data: { name, role, company, date, excerpt, link },
+} = recommendation;
+---
+
+<div class="mb-2">
+  <h4 class="text-lg font-bold">
+    {name}
+  </h4>
+  <div class="text-sm text-gray-600">
+    <span>{role}</span>
+    <Dot size={6} />
+    <span>{company}</span>
+    <Dot size={6} />
+    <span>{date}</span>
+  </div>
+  <div class="relative">
+    <span class="font-semibold">Excerpt:</span>
+    <span class="text-sm">
+      {excerpt}
+    </span>
+    <a class="absolute right-0 underline text-sm" href={link}>Read Full</a>
+  </div>
+</div>

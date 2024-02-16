@@ -1,0 +1,19 @@
+---
+interface Props {
+  size: number;
+  className?: string;
+}
+
+const { size, className } = Astro.props;
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width={size}
+  height={size}
+  fill="currentColor"
+  class={`inline ${className}`}
+  viewBox={`0 0 ${size} ${size}`}
+>
+  <circle cx={size / 2} cy={size / 2} r={size / 2}></circle>
+</svg>

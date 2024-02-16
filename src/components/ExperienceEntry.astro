@@ -1,0 +1,38 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Dot from "./Dot.astro";
+interface Props {
+  experience: CollectionEntry<"experience">;
+  pageBreak?: boolean;
+}
+
+const { experience, pageBreak } = Astro.props;
+const {
+  data: { role, company, start, end, techstack },
+} = experience;
+const { Content } = await experience.render();
+---
+
+<div
+  class={`grid grid-cols-4 mb-4 gap-4 items-center${pageBreak ? " break-after-page" : ""}`}
+>
+  <div class="col-span-3">
+    <h4 class="text-lg font-bold">
+      {role}
+    </h4>
+    <div class="text-sm text-gray-600">
+      <span>{company}</span>
+      <Dot size={6} />
+      <span>{start}</span>-<span>{end}</span>
+    </div>
+    <div class="content">
+      <Content />
+    </div>
+  </div>
+  <div class="col-span-1">
+    <h4 class="font-semibold text-gray-700">Tech Stack</h4>
+    <div class="text-xs text-gray-500">
+      {techstack}
+    </div>
+  </div>
+</div>

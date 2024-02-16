@@ -1,0 +1,28 @@
+---
+import { Image } from "astro:assets";
+import russellFace from "../assets/russell_face.png";
+import Dot from "../components/Dot.astro";
+---
+
+<header class="bg-sky-100">
+  <div class="p-4 grid grid-cols-5 gap-7 items-center">
+    <div class="col-span-1">
+      <Image
+        class="object-cover"
+        src={russellFace}
+        alt="Russell looking like somebody you want to hire!"
+      />
+    </div>
+    <div class="col-span-4">
+      <h1 class="text-4xl uppercase">Russell Evan Snyder</h1>
+      <h2 class="text-3xl text-gray-600 uppcase">Senior Software Developer</h2>
+      <div class="text-center mt-3 text-gray-500 flex items-center">
+        <span>Erlangen, Germany</span>
+        <Dot size={6} className="mx-2" />
+        <span>+4917645766404</span>
+        <Dot size={6} className="mx-2" />
+        <span>russellevansnyder@gmail.com</span>
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,24 @@
+---
+import { getEntry } from "astro:content";
+import ExperienceEntry from "../components/ExperienceEntry.astro";
+import Section from "../components/Section.astro";
+const fides = await getEntry("experience", "fides");
+const shopify = await getEntry("experience", "shopify");
+const methodPark = await getEntry("experience", "method-park");
+const honeypot = await getEntry("experience", "honeypot");
+const wunderdog = await getEntry("experience", "wunderdog");
+const freelance = await getEntry("experience", "freelance-2018");
+const thomann = await getEntry("experience", "thomann");
+const udg = await getEntry("experience", "udg");
+---
+
+<Section title="Professional Experience">
+  <ExperienceEntry experience={fides} />
+  <ExperienceEntry experience={shopify} />
+  <ExperienceEntry experience={methodPark} pageBreak />
+  <ExperienceEntry experience={honeypot} />
+  <ExperienceEntry experience={wunderdog} />
+  <ExperienceEntry experience={freelance} />
+  <ExperienceEntry experience={thomann} />
+  <!-- <ExperienceEntry experience={udg} /> -->
+</Section>

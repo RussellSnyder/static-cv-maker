@@ -1,0 +1,27 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Dot from "./Dot.astro";
+interface Props {
+  education: CollectionEntry<"education">;
+}
+
+const { education } = Astro.props;
+const {
+  data: { title, organization, date },
+} = education;
+const { Content } = await education.render();
+---
+
+<div class="mb-2">
+  <h4 class="text-lg font-bold">
+    {title}
+  </h4>
+  <div class="text-sm text-gray-600">
+    {organization}
+    <Dot size={5} />
+    {date}
+  </div>
+  <div class="content text-xs">
+    <Content />
+  </div>
+</div>

@@ -1,0 +1,17 @@
+---
+import { getEntry } from "astro:content";
+import EducationEntry from "../components/EducationEntry.astro";
+import Section from "../components/Section.astro";
+
+const softwareArchitect = await getEntry("education", "software-architect");
+const scrumMaster = await getEntry("education", "scrum-master");
+const masters = await getEntry("education", "msc-digital-composition");
+const undergrad = await getEntry("education", "bmus-psychology");
+---
+
+<Section title="Education">
+  <EducationEntry education={softwareArchitect} />
+  <EducationEntry education={scrumMaster} />
+  <EducationEntry education={masters} />
+  <EducationEntry education={undergrad} />
+</Section>

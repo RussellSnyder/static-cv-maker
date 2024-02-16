@@ -1,0 +1,12 @@
+---
+interface Props {
+  title: string;
+  small?: boolean;
+}
+
+const { title, small } = Astro.props;
+---
+
+<h3 class={`${small ? "text-xl" : "text-2xl"} text-gray-500 font-semibold`}>
+  {title}
+</h3>

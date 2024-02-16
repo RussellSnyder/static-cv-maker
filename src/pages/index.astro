@@ -1,0 +1,23 @@
+---
+import Layout from "../layouts/Layout.astro";
+import EducationSection from "../sections/EducationSection.astro";
+import ExperienceSection from "../sections/ExperienceSection.astro";
+import ReferenceAndRecommendationSection from "../sections/FooterSection.astro";
+---
+
+<Layout title="Welcome to Astro.">
+  <main class="p-4">
+    <div class="mb-8">
+      <EducationSection />
+    </div>
+    <div class="mb-8">
+      <ExperienceSection />
+    </div>
+    <ReferenceAndRecommendationSection />
+  </main>
+</Layout>
+
+<style>
+  main {
+  }
+</style>

@@ -1,0 +1,67 @@
+---
+import { Image } from "astro:assets";
+import { getEntry } from "astro:content";
+import githubLogo from "../assets/github_logo.svg";
+import linkedinLogo from "../assets/linkedin_logo.svg";
+
+import RecommendationEntry from "../components/RecommendationEntry.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+const honeypot = await getEntry("recommendation", "honeypot");
+const adidas = await getEntry("recommendation", "adidas");
+---
+
+<div class="grid grid-cols-3 gap-6">
+  <div class="col-span-2">
+    <SectionHeader title="Recommendations" />
+    <RecommendationEntry recommendation={honeypot} />
+    <RecommendationEntry recommendation={adidas} />
+  </div>
+  <div class="col-span-1">
+    <div class="mb-2">
+      <SectionHeader title="References" small />
+      <div>Available upon request</div>
+    </div>
+    <div class="mb-2">
+      <SectionHeader title="Languages" small />
+      <ul>
+        <li><span class="font-semibold">English</span>: Native</li>
+        <li><span class="font-semibold">German</span>: Fluent</li>
+      </ul>
+    </div>
+    <div class="mb-2">
+      <SectionHeader title="Other Interests" small />
+      <ul>
+        <li>
+          <span class="font-semibold">Music</span>: <span class="text-xs">
+            Performance, Composition
+          </span>
+        </li>
+        <li>
+          <span class="font-semibold">Psychology</span>: <span class="text-xs">
+            Coaching, UX
+          </span>
+        </li>
+        <li>
+          <span class="font-semibold">Random</span>: <span class="text-xs">
+            One Piece, Cooking
+          </span>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <SectionHeader title="Social Media" small />
+      <ul>
+        <li class="flex items-center mb-1">
+          <Image class="w-5 mr-2" src={githubLogo} alt="github logo" />
+          <a class="text-xs" href="github.com/RussellSnyder">RussellSnyder</a>
+        </li>
+        <li class="flex items-center">
+          <Image class="w-5 mr-2" src={linkedinLogo} alt="linkedIn logo" />
+          <a class="text-xs" href="linkedin.com/in/russell-snyder-io/"
+            >russell-snyder-io</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
