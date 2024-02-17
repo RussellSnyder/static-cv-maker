@@ -9,7 +9,5 @@ interface Props {
 const { title, centerTitle } = Astro.props;
 ---
 
-<div class="mb-4">
-  <SectionHeader title={title} center={centerTitle} />
-  <slot />
-</div>
+<SectionHeader title={title} center={centerTitle} />
+<slot />
