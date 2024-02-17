@@ -3,7 +3,7 @@ role: 'Senior Software Engineer'
 company: 'Fides Technology GmbH'
 start: 'Sep 2023'
 end: 'Feb 2024'
-techstack: 'React, Typescript, Node, TypeOrm, Nest.js, AWS, Playwright, Jest, Next.js, MaterialUI, NX, ES6, PNPM, PostGreSQL, Storybook'
+techstack: 'React, Typescript, Node, TypeOrm, Nest.js, Docker, AWS, Playwright, Jest, Next.js, MaterialUI, NX, ES6, PNPM, PostGreSQL, Storybook'
 ---
 Product and Platform Engineer at Legal Tech startup
 - Secure apis developed using React and Node

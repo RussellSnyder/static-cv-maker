@@ -3,7 +3,7 @@ role: 'Senior Software Engineer'
 company: 'Shopify Inc.'
 start: 'Sep 2021'
 end: 'Jun 2023'
-techstack: 'React, Typescript, Node, Ruby, React Native, ES6, Reanimated, Yarn, Lottie, Ruby On Rails, Github, Jest, Docusaurus, Android'
+techstack: 'React, Typescript, Node, Ruby, React Native, Docker, ES6, Reanimated, Yarn, Lottie, Ruby On Rails, Github, Jest, Docusaurus, Android'
 ---
 Software Engineer on Shopify's [Shop App](https://shop.app/) team
 - React Native SDK development for 3rd party integration
