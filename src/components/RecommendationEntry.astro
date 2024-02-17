@@ -22,11 +22,12 @@ const {
     <Dot size={6} />
     <span>{date}</span>
   </div>
-  <div class="relative">
-    <span class="font-semibold">Excerpt:</span>
-    <span class="text-sm">
-      {excerpt}
-    </span>
-    <a class="absolute right-0 underline text-sm" href={link}>Read Full</a>
+  <div class="relative ml-2">
+    <blockquote class="leading-tight" cite={link}>
+      "{excerpt}"
+    </blockquote>
+    <a class="absolute right-2 bottom-0 underline text-sm" href={link}
+      >Read Full</a
+    >
   </div>
 </div>

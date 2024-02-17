@@ -2,11 +2,14 @@
 interface Props {
   title: string;
   small?: boolean;
+  center?: boolean;
 }
 
-const { title, small } = Astro.props;
+const { title, small, center } = Astro.props;
 ---
 
-<h3 class={`${small ? "text-xl" : "text-2xl"} text-gray-500 font-semibold`}>
+<h3
+  class={`${center ? "text-center " : ""}${small ? "text-xl" : "text-2xl"} text-gray-500 font-semibold mb-${small ? 0 : 2}`}
+>
   {title}
 </h3>

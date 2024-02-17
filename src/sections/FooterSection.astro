@@ -10,14 +10,14 @@ const honeypot = await getEntry("recommendation", "honeypot");
 const adidas = await getEntry("recommendation", "adidas");
 ---
 
-<div class="sm:grid sm:grid-cols-3 gap-6">
-  <div class="sm:col-span-2">
+<div class="sm:grid sm:grid-cols-5 gap-6">
+  <div class="sm:col-span-3">
     <SectionHeader title="Recommendations" />
     <RecommendationEntry recommendation={honeypot} />
     <RecommendationEntry recommendation={adidas} />
   </div>
   <div
-    class="sm:col-span-1 w-full flex flex-col items-center sm:items-start text-center sm:text-left"
+    class="sm:col-span-2 w-full flex flex-col items-center sm:items-start text-center sm:text-left"
   >
     <div class="mb-2">
       <SectionHeader title="References" small />
@@ -52,7 +52,7 @@ const adidas = await getEntry("recommendation", "adidas");
     </div>
     <div>
       <SectionHeader title="Social Media" small />
-      <ul>
+      <ul class="mt-1">
         <li class="flex items-center mb-1">
           <Image class="w-5 mr-2" src={githubLogo} alt="github logo" />
           <a class="text-xs" href="github.com/RussellSnyder">RussellSnyder</a>

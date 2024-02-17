@@ -1,5 +1,5 @@
 ---
-title: 'BMUS Psychology and Jazz Performance'
+title: 'BMus Psychology and Jazz Performance'
 organization: 'Mcgill University, Canada'
 date: '2011'
 ---

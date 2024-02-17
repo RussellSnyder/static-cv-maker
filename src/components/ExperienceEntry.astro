@@ -14,24 +14,26 @@ const { Content } = await experience.render();
 ---
 
 <div
-  class={`grid sm:grid-cols-4 mb-4 gap-2 sm:gap-4 items-center${pageBreak ? " break-after-page" : ""}`}
+  class={`grid sm:grid-cols-5 mb-4 gap-2 sm:gap-4 items-center${pageBreak ? " break-after-page" : ""}`}
 >
   <div class="sm:col-span-3">
-    <h4 class="text-lg font-bold">
+    <h4 class="text-lg font-bold leading-none">
       {role}
     </h4>
-    <div class="text-sm text-gray-600">
-      <span>{company}</span>
-      <Dot size={6} />
-      <span>{start}</span>-<span>{end}</span>
-    </div>
-    <div class="content">
-      <Content />
+    <div class="pl-2">
+      <div class="text-sm text-gray-600">
+        <span>{company}</span>
+        <Dot size={6} />
+        <span>{start}</span>-<span>{end}</span>
+      </div>
+      <div class="content text-sm">
+        <Content />
+      </div>
     </div>
   </div>
-  <div class="sm:col-span-1">
-    <h4 class="font-semibold text-gray-700">Tech Stack</h4>
-    <div class="text-xs text-gray-500 w-full">
+  <div class="sm:col-span-2">
+    <h4 class="font-semibold text-gray-500 text-xs uppercase">Tech Stack</h4>
+    <div class="text-sm leading-tight text-gray-700 w-full">
       {techstack}
     </div>
   </div>

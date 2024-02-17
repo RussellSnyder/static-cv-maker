@@ -12,8 +12,8 @@ const {
 const { Content } = await education.render();
 ---
 
-<div class="mb-2">
-  <h4 class="text-lg font-bold">
+<div class="mb-3 text-center">
+  <h4 class="text-lg font-bold leading-none">
     {title}
   </h4>
   <div class="text-sm text-gray-600">
@@ -21,7 +21,7 @@ const { Content } = await education.render();
     <Dot size={5} />
     {date}
   </div>
-  <div class="content text-xs">
+  <div class="content text-sm leading-none">
     <Content />
   </div>
 </div>
