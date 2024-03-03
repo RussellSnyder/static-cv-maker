@@ -9,5 +9,5 @@ techstack: 'React, Typescript, Node, Gatsby, Docker, Ember, Cypress, NPM, Netlif
 Manager and engineer for product and marketing teams
 - Agile manager for [cult.honeypot.io](https://cult.honeypot.io/)
 - Mentor for junior developers
-- Analytics dashboard created
+- Analytics dashboards created
 - Reverse tech recruiting platform features developed

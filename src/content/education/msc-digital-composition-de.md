@@ -1,0 +1,1 @@
+Planen, programmieren und live auftreten mit gestengesteuerter audiovisueller Software

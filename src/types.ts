@@ -11,3 +11,5 @@ export interface EducationEntry {
   organization: string;
   date: string;
 }
+
+export type SupportedLanguage = "en" | "de";

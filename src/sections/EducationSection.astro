@@ -1,15 +1,25 @@
 ---
-import { getEntry } from "astro:content";
 import EducationEntry from "../components/EducationEntry.astro";
 import Section from "../components/Section.astro";
+import type { SupportedLanguage } from "../types";
+import { getEducationEntry, getTranslation } from "../utils/getContent";
 
-const softwareArchitect = await getEntry("education", "software-architect");
-const scrumMaster = await getEntry("education", "scrum-master");
-const masters = await getEntry("education", "msc-digital-composition");
-const undergrad = await getEntry("education", "bmus-psychology");
+interface Props {
+  language?: SupportedLanguage;
+}
+
+const { language } = Astro.props;
+
+const softwareArchitect = await getEducationEntry(
+  "software-architect",
+  language
+);
+const scrumMaster = await getEducationEntry("scrum-master", language);
+const masters = await getEducationEntry("msc-digital-composition", language);
+const undergrad = await getEducationEntry("bmus-psychology", language);
 ---
 
-<Section title="Education" centerTitle>
+<Section title={getTranslation("EDUCATION", language)} centerTitle>
   <EducationEntry education={softwareArchitect} />
   <EducationEntry education={scrumMaster} />
   <EducationEntry education={masters} />

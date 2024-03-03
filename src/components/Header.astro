@@ -2,6 +2,14 @@
 import { Image } from "astro:assets";
 import russellFace from "../assets/russell_face.png";
 import Dot from "../components/Dot.astro";
+import type { SupportedLanguage } from "../types";
+import { getTranslation } from "../utils/getContent";
+
+interface Props {
+  language?: SupportedLanguage;
+}
+
+const { language } = Astro.props;
 ---
 
 <header class="bg-sky-100 mb-4 md:mt-8 sm:mt-0">
@@ -16,7 +24,7 @@ import Dot from "../components/Dot.astro";
     <div class="text-center sm:text-left sm:col-span-4">
       <h1 class="text-2xl sm:text-4xl uppercase">Russell Evan Snyder</h1>
       <h2 class="text-xl sm:text-3xl text-gray-600 uppcase">
-        Senior Software Engineer
+        {getTranslation("ASPIRING_ROLE", language)}
       </h2>
       <div
         class="text-sm sm:text-base text-center mt-3 text-gray-500 sm:flex items-center"

@@ -3,7 +3,7 @@ import { defineCollection } from "astro:content";
 import {
   EducationSchema,
   ExperienceSchema,
-  RecomendationSchema,
+  RecommendationSchema,
 } from "../schemas";
 // 2. Define your collection(s)
 const experience = defineCollection({
@@ -16,7 +16,7 @@ const education = defineCollection({
 });
 const recommendation = defineCollection({
   type: "content",
-  schema: RecomendationSchema,
+  schema: RecommendationSchema,
 });
 // 3. Export a single `collections` object to register your collection(s)
 //    This key should match your collection directory name in "src/content"

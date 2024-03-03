@@ -1,23 +1,31 @@
 ---
-import { getEntry } from "astro:content";
 import ExperienceEntry from "../components/ExperienceEntry.astro";
 import Section from "../components/Section.astro";
-const fides = await getEntry("experience", "fides");
-const shopify = await getEntry("experience", "shopify");
-const methodPark = await getEntry("experience", "method-park");
-const honeypot = await getEntry("experience", "honeypot");
-const wunderdog = await getEntry("experience", "wunderdog");
-const freelance = await getEntry("experience", "freelance-2018");
-const thomann = await getEntry("experience", "thomann");
+import type { SupportedLanguage } from "../types";
+import { getExperienceEntry, getTranslation } from "../utils/getContent";
+
+interface Props {
+  language?: SupportedLanguage;
+}
+
+const { language } = Astro.props;
+
+const fides = await getExperienceEntry("fides", language);
+const shopify = await getExperienceEntry("shopify", language);
+const methodPark = await getExperienceEntry("method-park", language);
+const honeypot = await getExperienceEntry("honeypot", language);
+const wunderdog = await getExperienceEntry("wunderdog", language);
+const freelance = await getExperienceEntry("freelance-2018", language);
+const thomann = await getExperienceEntry("thomann", language);
 ---
 
-<Section title="Professional Experience">
-  <ExperienceEntry experience={fides} />
-  <ExperienceEntry experience={shopify} />
-  <ExperienceEntry experience={methodPark} />
-  <ExperienceEntry experience={honeypot} />
-  <ExperienceEntry experience={wunderdog} pageBreak />
-  <ExperienceEntry experience={freelance} />
-  <ExperienceEntry experience={thomann} />
+<Section title={getTranslation("EXPERIENCE", language)}>
+  <ExperienceEntry language={language} experience={fides} />
+  <ExperienceEntry language={language} experience={shopify} />
+  <ExperienceEntry language={language} experience={methodPark} />
+  <ExperienceEntry language={language} experience={honeypot} />
+  <ExperienceEntry language={language} experience={wunderdog} pageBreak />
+  <ExperienceEntry language={language} experience={freelance} />
+  <ExperienceEntry language={language} experience={thomann} />
   <!-- <ExperienceEntry experience={udg} /> -->
 </Section>

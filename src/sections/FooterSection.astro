@@ -1,57 +1,79 @@
 ---
 import { Image } from "astro:assets";
-import { getEntry } from "astro:content";
 import githubLogo from "../assets/github_logo.svg";
 import linkedinLogo from "../assets/linkedin_logo.svg";
 
 import RecommendationEntry from "../components/RecommendationEntry.astro";
 import SectionHeader from "../components/SectionHeader.astro";
-const honeypot = await getEntry("recommendation", "honeypot");
-const adidas = await getEntry("recommendation", "adidas");
+import type { SupportedLanguage } from "../types";
+import { getRecommendationEntry, getTranslation } from "../utils/getContent";
+
+interface Props {
+  language?: SupportedLanguage;
+}
+
+const { language } = Astro.props;
+
+const honeypot = await getRecommendationEntry("honeypot", language);
+const adidas = await getRecommendationEntry("adidas", language);
 ---
 
 <div class="sm:grid sm:grid-cols-5 gap-6">
   <div class="sm:col-span-3">
-    <SectionHeader title="Recommendations" />
-    <RecommendationEntry recommendation={honeypot} />
-    <RecommendationEntry recommendation={adidas} />
+    <SectionHeader title={getTranslation("RECOMMENDATIONS", language)} />
+    <RecommendationEntry recommendation={honeypot} language={language} />
+    <RecommendationEntry recommendation={adidas} language={language} />
   </div>
   <div
     class="mt-8 sm:mt-0 sm:col-span-2 w-full flex flex-col items-center sm:items-start text-center sm:text-left"
   >
     <div class="mb-2">
-      <SectionHeader title="References" small />
-      <div>Available upon request</div>
+      <SectionHeader title={getTranslation("REFERENCES", language)} small />
+      <div>{getTranslation("AVAILABLE_UPON_REQUEST", language)}</div>
     </div>
     <div class="mb-2">
-      <SectionHeader title="Languages" small />
+      <SectionHeader title={getTranslation("LANGUAGES", language)} small />
       <ul>
-        <li><span class="font-semibold">English</span>: Native</li>
-        <li><span class="font-semibold">German</span>: Fluent</li>
+        <li>
+          <span class="font-semibold"
+            >{getTranslation("ENGLISH", language)}</span
+          >: {getTranslation("LANGUAGE_LEVEL_NATIVE", language)}
+        </li>
+        <li>
+          <span class="font-semibold">{getTranslation("GERMAN", language)}</span
+          >: {getTranslation("LANGUAGE_LEVEL_FLUENT", language)}
+        </li>
       </ul>
     </div>
     <div class="mb-2">
-      <SectionHeader title="Other Interests" small />
+      <SectionHeader
+        title={getTranslation("OTHER_INTERESTS", language)}
+        small
+      />
       <ul>
         <li>
-          <span class="font-semibold">Music</span>: <span class="text-xs">
-            Performance, Composition
+          <span class="font-semibold">{getTranslation("MUSIC", language)}</span
+          >: <span class="text-xs">
+            {getTranslation("MUSIC_INTERESTS", language)}
           </span>
         </li>
         <li>
-          <span class="font-semibold">Psychology</span>: <span class="text-xs">
-            Coaching, UX
+          <span class="font-semibold"
+            >{getTranslation("PSYCHOLOGY", language)}</span
+          >: <span class="text-xs">
+            {getTranslation("PSYCHOLOGY_INTERESTS", language)}
           </span>
         </li>
         <li>
-          <span class="font-semibold">Random</span>: <span class="text-xs">
-            One Piece, Cooking
+          <span class="font-semibold">{getTranslation("RANDOM", language)}</span
+          >: <span class="text-xs">
+            {getTranslation("RANDOM_INTERESTS", language)}
           </span>
         </li>
       </ul>
     </div>
     <div>
-      <SectionHeader title="Social Media" small />
+      <SectionHeader title={getTranslation("SOCIAL_MEDIA", language)} small />
       <ul class="mt-1">
         <li class="flex items-center mb-1">
           <Image class="w-5 mr-2" src={githubLogo} alt="github logo" />

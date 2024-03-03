@@ -1,11 +1,14 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import type { SupportedLanguage } from "../types";
+import { getTranslation } from "../utils/getContent";
 import Dot from "./Dot.astro";
 interface Props {
   recommendation: CollectionEntry<"recommendation">;
+  language?: SupportedLanguage;
 }
 
-const { recommendation } = Astro.props;
+const { recommendation, language } = Astro.props;
 const {
   data: { name, role, company, date, excerpt, link },
 } = recommendation;
@@ -28,7 +31,7 @@ const {
     </blockquote>
     <a
       class="absolute pl-1 right-0 bottom-0 underline text-sm bg-white"
-      href={link}>Read Full</a
+      href={link}>{getTranslation("READ_MORE", language)}</a
     >
   </div>
 </div>

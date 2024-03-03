@@ -1,12 +1,15 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import type { SupportedLanguage } from "../types";
+import { getTranslation } from "../utils/getContent";
 import Dot from "./Dot.astro";
 interface Props {
   experience: CollectionEntry<"experience">;
   pageBreak?: boolean;
+  language?: SupportedLanguage;
 }
 
-const { experience, pageBreak } = Astro.props;
+const { experience, pageBreak, language } = Astro.props;
 const {
   data: { role, company, start, end, techstack },
 } = experience;
@@ -39,8 +42,8 @@ const { Content } = await experience.render();
   </div>
   {
     pageBreak ? (
-      <div class="hidden col-span-5 mt-10 text-right justify-end print:block w-full">
-        Continues on next page&rarr;
+      <div class="hidden mt-10 text-right justify-end print:block w-full absolute bottom-0 right-0">
+        {getTranslation("CONTINUES_ON_NEXT_PAGE", language)}&rarr;
       </div>
     ) : null
   }
