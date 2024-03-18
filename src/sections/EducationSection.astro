@@ -17,9 +17,11 @@ const softwareArchitect = await getEducationEntry(
 const scrumMaster = await getEducationEntry("scrum-master", language);
 const masters = await getEducationEntry("msc-digital-composition", language);
 const undergrad = await getEducationEntry("bmus-psychology", language);
+const metaBackend = await getEducationEntry("meta-backend", language);
 ---
 
 <Section title={getTranslation("EDUCATION", language)} centerTitle>
+  <EducationEntry education={metaBackend} />
   <EducationEntry education={softwareArchitect} />
   <EducationEntry education={scrumMaster} />
   <EducationEntry education={masters} />
