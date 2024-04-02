@@ -1,8 +1,8 @@
 ---
-title: 'Programming in Python, Django Web Framework, Apis'
+title: 'Meta Back-End Developer Professional Certificate'
 organization: 'Meta / Coursera'
 date: '2024'
 ---
-Courses taught by the developers of Facebook and Instagram
+Web development with Python and Django taught by the developers of Facebook
 
-Certificates: [linkedin.com/in/russell-snyder-io/details/certifications/](https://www.linkedin.com/in/russell-snyder-io/details/certifications/)
+Certificate: [https://www.coursera.org/account/accomplishments/specialization/X7SVXHLZ7ZZ9](https://www.coursera.org/account/accomplishments/specialization/X7SVXHLZ7ZZ9)
